@@ -1,0 +1,13 @@
+services:
+  express-app:
+    build: .
+    container_name: express_app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    restart: unless-stopped
+    command: npm run dev
