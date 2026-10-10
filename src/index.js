@@ -13,8 +13,11 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/test', (req, res) => {
+  res.status(200).json({ status: 'OK', timestamp: new Date().toISOString(),message:'test message' });
+});
 
-app.get('/health', (req, res) => {
+app.get('/health-check', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
